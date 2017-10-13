@@ -11,10 +11,10 @@
     <div class="inputs">
       <input placeholder="Write here..."></input>
     </div>
-    <button class="add">Submit</button>
+    <button class="add">Add more lines</button>
   </div>
   <div class="resultSection"></div>
-  <button>Search for answer</button>
+  <button class="submit">Search for answer</button>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
@@ -25,9 +25,16 @@ var add_option = function() {
   $('.inputs').append('<input></input>')
 }
   $('.add').click(add_option)
-  
+
+  var options = []
+  var submit = function() {
+$('input').each(function() {
+options.push($(this).val())
+})
+var winner = options[Math.random() * options.lenght]
+  }
+  $('.submit').click(submit)
 })
 </script>
-
 </body>
 </html>
