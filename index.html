@@ -28,10 +28,14 @@ var add_option = function() {
 
   var options = []
   var submit = function() {
+  $('.inputOne').hide()
+  $('.resultSection').css('display', 'flex')
 $('input').each(function() {
 options.push($(this).val())
 })
-var winner = options[Math.random() * options.lenght]
+var winner = options[Math.floor(Math.random() * options.length)]
+console.log(winner)
+$('.resultSection').text(winner)
   }
   $('.submit').click(submit)
 })
